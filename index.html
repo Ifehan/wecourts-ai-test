@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tournament Hub</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;700&family=Lexend+Exa:wght@500;600&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'text-primary': '#0e1b50',
+                        'text-secondary': '#384267',
+                        'text-dark-1': '#0E1B50',
+                        'text-dark-1-5': '#242E56',
+                        'brand-main': '#284CCC',
+                        'surface-green': '#3a9644',
+                        'surface-blue': '#508aeb',
+                        'surface-dark-blue': '#2749c4',
+                        'surface-pastel-blue': '#d8dff9',
+                        'accent-blue-secondary': '#e4f7fe',
+                        'accent-blue-tertiary': '#f1f8ff',
+                        'surface-accent-pastel-blue': '#f9fbff',
+                        'system-white': '#ffffff',
+                        'white': '#FFFFFF'
+                    },
+                    fontFamily: {
+                        'lexend': ['Lexend', 'sans-serif'],
+                        'lexend-exa': ['Lexend Exa', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gradient-text {
+            background: linear-gradient(90deg, #EA2E2E 0%, #C8284F 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .tournament-gradient {
+            background: linear-gradient(90deg, #EA2E2E 0%, #C8284F 100%);
+        }
+    </style>
+</head>
+<body class="bg-surface-accent-pastel-blue font-lexend">
+    <div class="min-h-screen flex flex-col items-center py-24">
+        <!-- Banner Section -->
+        <div class="w-full px-20 mb-8">
+            <div class="bg-white rounded-[32px] p-12 flex items-center gap-6">
+                <div class="flex flex-col gap-4 w-[400px]">
+                    <div class="flex flex-col gap-1.5">
+                        <h1 class="text-[36px] font-lexend-exa font-semibold tracking-[-4.32px] leading-[1.4] gradient-text">
+                            Tournament Hub
+                        </h1>
+                        <p class="text-text-dark-1 text-[17px] font-lexend font-normal tracking-[-0.34px] leading-[1.4]">
+                            Discover Tournaments
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="flex-1 flex items-center justify-center gap-8">
+                    <div class="flex items-center gap-3">
+                        <span class="text-text-dark-1 text-[28px] font-lexend-exa font-semibold tracking-[-3.36px]">36</span>
+                        <span class="text-text-dark-1-5 text-[14px] font-lexend font-medium tracking-[-0.28px] opacity-90">TOTAL</span>
+                    </div>
+                    <div class="w-5 h-0 border border-surface-pastel-blue rotate-90"></div>
+                    <div class="flex items-center gap-3">
+                        <span class="text-brand-main text-[28px] font-lexend-exa font-semibold tracking-[-3.36px]">17</span>
+                        <span class="text-text-dark-1-5 text-[14px] font-lexend font-medium tracking-[-0.28px] opacity-90">UPCOMING</span>
+                    </div>
+                    <div class="w-5 h-0 border border-surface-pastel-blue rotate-90"></div>
+                    <div class="flex items-center gap-3">
+                        <span class="text-[28px] font-lexend-exa font-semibold tracking-[-3.36px] tournament-gradient">0</span>
+                        <div class="flex items-center gap-1">
+                            <span class="text-text-dark-1-5 text-[14px] font-lexend font-medium tracking-[-0.28px] opacity-90">LIVE</span>
+                            <div class="w-[7px] h-[7px] bg-red-500 rounded-full animate-pulse"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="w-[286px] h-36 bg-gray-200 rounded-lg"></div>
+            </div>
+        </div>
+
+        <!-- Filters Bar -->
+        <div class="w-full px-20 mb-8">
+            <div class="flex items-center gap-4">
+                <!-- Search Field -->
+                <div class="bg-white rounded-xl h-[51px] w-[502px] relative border border-white shadow-[0px_0px_2px_0px_rgba(18,32,113,0.3)]">
+                    <div class="absolute inset-0 flex items-center px-4 gap-3">
+                        <svg class="w-5 h-5 text-text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                        </svg>
+                        <input type="text" placeholder="Search for Tournaments" class="flex-1 text-text-primary text-[15px] font-lexend font-normal tracking-[-0.3px] placeholder:text-text-primary placeholder:opacity-50 outline-none">
+                    </div>
+                </div>
+
+                <!-- Category Dropdown -->
+                <div class="bg-white rounded-lg border border-surface-pastel-blue shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)]">
+                    <button class="flex items-center gap-2 px-3 py-2.5 text-text-primary text-[14px] font-lexend font-normal tracking-[-0.28px]">
+                        All Categories
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                </div>
+
+                <!-- Toggle -->
+                <div class="flex items-center gap-2">
+                    <div class="w-10 h-6 bg-surface-dark-blue rounded-full relative cursor-pointer" id="toggle">
+                        <div class="absolute top-0.5 left-0.5 w-5 h-5 bg-white rounded-full transition-transform duration-200" id="toggle-thumb"></div>
+                    </div>
+                    <span class="text-text-primary text-[14px] font-lexend font-normal tracking-[-0.28px]">Upcoming Only</span>
+                </div>
+
+                <!-- View Dropdown -->
+                <div class="bg-white rounded-lg border border-surface-pastel-blue shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)]">
+                    <button class="flex items-center gap-2 px-3 py-2.5 text-text-primary text-[14px] font-lexend font-normal tracking-[-0.28px]">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h16M4 18h16"></path>
+                        </svg>
+                        Grid View
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tournament Grid -->
+        <div class="w-full px-20 mb-8">
+            <div class="grid grid-cols-4 gap-6 mb-6">
+                <!-- Tournament Cards will be generated here -->
+            </div>
+            <div class="grid grid-cols-4 gap-6">
+                <!-- More Tournament Cards will be generated here -->
+            </div>
+        </div>
+
+        <!-- Pagination -->
+        <div class="flex items-center justify-center gap-1">
+            <button class="flex items-center gap-2 px-3 py-2 text-text-primary text-[14px] font-lexend font-normal tracking-[-0.28px] hover:bg-white rounded-md transition-colors">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+                Previous
+            </button>
+            
+            <button class="w-9 h-9 flex items-center justify-center text-text-primary text-[14px] font-lexend font-normal tracking-[-0.28px] hover:bg-white rounded-md transition-colors">1</button>
+            <button class="w-9 h-9 flex items-center justify-center text-text-primary text-[14px] font-lexend font-normal tracking-[-0.28px] bg-white border border-surface-pastel-blue shadow-[0px_1px_2px_0px_rgba(0,0,0,0.1)] rounded-md">2</button>
+            <button class="w-9 h-9 flex items-center justify-center text-text-primary text-[14px] font-lexend font-normal tracking-[-0.28px] hover:bg-white rounded-md transition-colors">3</button>
+            <button class="w-9 h-9 flex items-center justify-center text-text-primary text-[14px] font-lexend font-normal tracking-[-0.28px] hover:bg-white rounded-md transition-colors">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h.01M12 12h.01M19 12h.01"></path>
+                </svg>
+            </button>
+            
+            <button class="flex items-center gap-2 px-3 py-2 text-text-primary text-[14px] font-lexend font-normal tracking-[-0.28px] hover:bg-white rounded-md transition-colors">
+                Next
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // Tournament data
+        const tournaments = [
+            {
+                title: "Open C Padel Pro Tournament",
+                date: "Tue, 17 Oct • Starts 5pm",
+                location: "Club Amboseli, Dubai",
+                price: "150 AED",
+                categories: ["Category C"],
+                image: "https://images.unsplash.com/photo-1551698618-1dfe5d97d256?w=400&h=300&fit=crop",
+                verified: true,
+                countdown: "In 2 days"
+            },
+            {
+                title: "Dubai Tennis Championship",
+                date: "Thu, 19 Oct • Starts 3pm",
+                location: "Dubai Tennis Stadium",
+                price: "200 AED",
+                categories: ["Category B", "Category A"],
+                image: "https://images.unsplash.com/photo-1622279457486-62dcc4a431d6?w=400&h=300&fit=crop",
+                verified: true,
+                countdown: "In 4 days"
+            },
+            {
+                title: "Beach Volleyball Open",
+                date: "Sat, 21 Oct • Starts 6pm",
+                location: "JBR Beach Courts",
+                price: "120 AED",
+                categories: ["Category C"],
+                image: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=400&h=300&fit=crop",
+                verified: false,
+                countdown: "In 6 days"
+            },
+            {
+                title: "Golf Masters Tournament",
+                date: "Mon, 23 Oct • Starts 7am",
+                location: "Emirates Golf Club",
+                price: "350 AED",
+                categories: ["Category A"],
+                image: "https://images.unsplash.com/photo-1535131749006-b7f58c99034b?w=400&h=300&fit=crop",
+                verified: true,
+                countdown: "In 8 days"
+            },
+            {
+                title: "Basketball Street League",
+                date: "Wed, 25 Oct • Starts 4pm",
+                location: "Al Barsha Sports Complex",
+                price: "80 AED",
+                categories: ["Category C"],
+                image: "https://images.unsplash.com/photo-1546519638-68e109498ffc?w=400&h=300&fit=crop",
+                verified: false,
+                countdown: "In 10 days"
+            },
+            {
+                title: "Swimming Championship",
+                date: "Fri, 27 Oct • Starts 2pm",
+                location: "Hamdan Sports Complex",
+                price: "180 AED",
+                categories: ["Category B"],
+                image: "https://images.unsplash.com/photo-1530549387789-4c1017266635?w=400&h=300&fit=crop",
+                verified: true,
+                countdown: "In 12 days"
+            },
+            {
+                title: "Cricket Premier League",
+                date: "Sun, 29 Oct • Starts 5pm",
+                location: "Dubai International Stadium",
+                price: "250 AED",
+                categories: ["Category A", "Category B"],
+                image: "https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?w=400&h=300&fit=crop",
+                verified: true,
+                countdown: "In 14 days"
+            },
+            {
+                title: "Badminton Open",
+                date: "Tue, 31 Oct • Starts 6pm",
+                location: "Al Wasl Sports Club",
+                price: "100 AED",
+                categories: ["Category C"],
+                image: "https://images.unsplash.com/photo-1626224583764-f87db24ac4ea?w=400&h=300&fit=crop",
+                verified: false,
+                countdown: "In 16 days"
+            }
+        ];
+
+        // Generate tournament cards
+        function generateTournamentCard(tournament) {
+            return `
+                <div class="bg-white rounded-[32px] p-[14px] border-2 border-accent-blue-secondary shadow-[0px_-6px_2px_0px_inset_rgba(185,226,255,0.3)] hover:shadow-lg transition-all duration-300 cursor-pointer">
+                    <div class="relative h-[196px] rounded-[23.063px] mb-3 overflow-hidden">
+                        <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('${tournament.image}')"></div>
+                        <div class="absolute inset-0 bg-black bg-opacity-20"></div>
+                        
+                        <div class="absolute top-[9px] left-[13px] right-[13px] flex justify-between items-center">
+                            ${tournament.verified ? '<div class="w-[90.78px] h-[20.364px] bg-yellow-400 rounded"></div>' : ''}
+                            <div class="bg-white rounded-[1000px] px-2 py-1 border border-surface-pastel-blue shadow-[0px_2px_3px_0px_rgba(33,134,255,0.1)]">
+                                <span class="text-text-primary text-[11px] font-lexend font-medium tracking-[-0.22px]">${tournament.countdown}</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+      
